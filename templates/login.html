@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Security Flaws | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#393646;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color:#6F8695;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.topnav a:hover {
+    background-color: #F4FDFF;
+    color: #393646;
+}
+.center {
+    text-align: center;
+    margin: 10px;
+    color: white;
+    font-size: 40px;
+}
+input {
+    font-size: 25px;
+    border-radius: 5px;
+}
+.error {
+    font-size: 20px;
+    color: #a8153f;
+    text-align: center;
+}
+</style>
+</head>
+<body>    
+    <div class="topnav">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('checkout') }}">Checkout</a>
+        <a href="{{ url_for('redirection') }}">Redirect</a>
+    </div>
+    <h1 class="center"><pre>Login</pre></h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        <div class="center">
+            <input type="username" name="username" placeholder="username" autofocus="" required>
+        </div>
+        <div class="center">
+            <input type="password" name="password" placeholder="password" required>
+        </div>
+        <input type="hidden" name="returnUrl" value="{{returnUrl}}">
+        <div class="center">
+            <input type="submit" value="login">
+        </div>
+    </form>
+    <h1 class="error" style="color: pink"><pre>{{message}}</pre></h1>
+</body>
+</html>

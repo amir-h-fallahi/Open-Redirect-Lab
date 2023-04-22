@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{text}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#393646;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color:#6F8695;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.topnav a:hover {
+    background-color: #F4FDFF;
+    color: #393646;
+}
+</style>
+</head>
+<body>    
+    <div class="topnav">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('checkout') }}">Checkout</a>
+        <a href="{{ url_for('redirection') }}">Redirect</a>
+    </div>
+    <div style='text-align: center;padding: 400px 0;color:white;'>
+        <h1><pre>{{text}}</pre></h2>
+    </div>
+</body>
+</html>
