@@ -31,7 +31,9 @@ python3 app.py
   - 1 client side open redirect.
 #### Checkout
 - http://127.0.0.1:5000/checkout/
-- 9 level of client side open redirect.
+- 10 level of client side open redirect.
 #### Redirect
 - http://127.0.0.1:5000/redirect/
-- 8 level of server side open redirect.
+- 9 level of server side open redirect.
+
+> Increasing the level has nothing to do with the difficulty of the challenge.
