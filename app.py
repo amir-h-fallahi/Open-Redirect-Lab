@@ -207,7 +207,7 @@ def redirection():
 				if index == len(TRUSTED_DOMAINS) - 1:
 					return forbiddenRequest(ERRORS["domain_forbidden"])
 
-	elif level == 10:
+	elif level == 7:
 		# Hash Protection: Can be calculated in client side
 
 		signature = request.args.get("sig")
@@ -219,7 +219,7 @@ def redirection():
 		else:
 			return badRequest("Missing 'sig' parameter")
 
-	elif level == 11:
+	elif level == 8:
 		# HMAC protection
 
 		hmac_secret = app.config["HMAC_SECRET"]
@@ -234,10 +234,11 @@ def redirection():
 			dest = TRUSTED_URLS[1] # https://google.com
 
 			signature = hmac.new(hmac_secret.encode(), dest.encode(), hashlib.sha512).hexdigest()
-			return redirect(url_for("redirection",dest=dest, level=11, sig=signature))
+			return redirect(url_for("redirection",dest=dest, level=8, sig=signature))
 			# try to redirect to https://evil.com
-			# local.securityflaws.net:5000/redirect/?dest=https://evil.com&level=11&sig=1af20f50fb66acb226bf381b57327e6c4e9628a9ec3be4fffc0ba4346ba7de69bccd18c3e193e65b8697e29bcac1df37abcac130a1b2ecfb76dd65451f493dfb
-
+			# local.securityflaws.net:5000/redirect/?dest=https://evil.com&level=8&sig=1af20f50fb66acb226bf381b57327e6c4e9628a9ec3be4fffc0ba4346ba7de69bccd18c3e193e65b8697e29bcac1df37abcac130a1b2ecfb76dd65451f493dfb
+	else:
+		return redirect(url_for('home'))
 
 if __name__ == "__main__":
 	app.run(debug=True)
