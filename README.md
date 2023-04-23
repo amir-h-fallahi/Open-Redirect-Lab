@@ -19,6 +19,9 @@ python3 app.py
 
 ![Screenshot from 2023-04-22 10-38-41](https://user-images.githubusercontent.com/63167700/233769020-1a2eb3c0-842d-4db8-94a7-c2b63e55b81b.png)
 
+- `CTRL+C` to down the Flask app.
+- `deactivate` to quit the virtual env.
+
 ### Functions
 #### Login
 - http://127.0.0.1:5000/auth/login/
