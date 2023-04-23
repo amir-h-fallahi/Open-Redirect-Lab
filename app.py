@@ -127,8 +127,8 @@ def redirection():
 	TRUSTED_SCHEMES = app.config["TRUSTED_SCHEMES"]
 	TRUSTED_DOMAINS = app.config["TRUSTED_DOMAINS"]
 	TRUSTED_URLS = app.config["TRUSTED_URLS"]
-	dest_scheme = urlparse(dest).netloc
-	dest_domain = urlparse(dest).scheme
+	dest_scheme = urlparse(dest).scheme
+	dest_domain = urlparse(dest).netloc
 	ERRORS = app.config["ERRORS"]
 
 	if level == 0:
